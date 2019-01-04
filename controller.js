@@ -33,14 +33,19 @@ CalculatorController.prototype = {
                 this.decimalPosition = this.decimalPosition || 1;
                 break;
             case '=':
-                this.display =eval(this.display);
+                try {
+                    this.display = eval(this.display);
+                } catch (e) {
+
+                }                
+                    
                 break;
         }
     },
 
     number: function (number) {
         debugger
-        if (this.display.indexOf(0, 0) == 0) {
+        if (this.display.toString().charAt(0) == 0 && this.display.toString().charAt(1) !='.') {
             this.display = this.display.substr(1);
         }
         var arrDelimeters = ['+', '-', '/', '*'];
@@ -54,7 +59,7 @@ CalculatorController.prototype = {
             else {
                 includeNo = true;
             }
-         
+
         }
         if (includeNo)
             this.display = this.display + number;
