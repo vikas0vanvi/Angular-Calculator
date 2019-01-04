@@ -37,16 +37,19 @@ CalculatorController.prototype = {
                     this.display = eval(this.display);
                 } catch (e) {
 
-                }                
-                    
+                }
+
                 break;
         }
     },
-
+    negate: function () {
+        if (this.display.toString().charAt(0) != 0)
+            this.display = this.display.toString().charAt(0) == '-' ? Math.abs(this.display) : -Math.abs(this.display);
+    },
     number: function (number) {
         debugger
-        if (this.display.toString().charAt(0) == 0 && this.display.toString().charAt(1) !='.') {
-            this.display = this.display.substr(1);
+        if (this.display.toString().charAt(0) == 0 && this.display.toString().charAt(1) != '.') {
+            this.display = this.display.toString().substr(1);
         }
         var arrDelimeters = ['+', '-', '/', '*'];
         var includeNo = true;
