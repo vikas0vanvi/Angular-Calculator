@@ -27,18 +27,13 @@ CalculatorController.prototype = {
     },
 
     key: function (key) {
-        debugger
         switch (key) {
-            case '.':
-                this.decimalPosition = this.decimalPosition || 1;
-                break;
             case '=':
                 try {
                     this.display = eval(this.display);
                 } catch (e) {
 
                 }
-
                 break;
         }
     },
@@ -62,7 +57,6 @@ CalculatorController.prototype = {
             else {
                 includeNo = true;
             }
-
         }
         if (includeNo)
             this.display = this.display + number;
