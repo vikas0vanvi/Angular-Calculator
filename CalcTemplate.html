@@ -1,1 +1,25 @@
 
+<div id="calculator" ng-controller="CalculatorController">
+      <div style="font-family:fantasy;padding-bottom:3px;">Calculator</div>
+    <div id="display">{{display}}</div>
+    <div id="keys">
+      <button ng:click="number('7')">7</button>
+      <button ng:click="number('8')">8</button>
+      <button ng:click="number('9')">9</button>
+      <button ng:click="number('*')">*</button>
+      <button ng:click="number('4')">4</button>
+      <button ng:click="number('5')">5</button>
+      <button ng:click="number('6')">6</button>
+      <button ng:click="number('/')">/</button>
+      <button ng:click="number('3')">3</button>
+      <button ng:click="number('2')">2</button>
+      <button ng:click="number('1')">1</button>
+      <button ng:click="number('+')">+</button>
+      <button ng:click="negate()">+/-</button>
+      <button ng:click="key('.')">.</button>
+      <button ng:click="number('0')">0</button>
+      <button ng:click="number('-')">-</button>
+      <button class="wide" ng:click="clear()">C</button>
+      <button class="wide" ng:click="key('=')">=</button>
+    </div>
+  </div>
